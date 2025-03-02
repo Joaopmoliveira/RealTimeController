@@ -74,7 +74,7 @@ void write_control(Client& client){
     } 
   });
   //----------------------- here we should do our control law --------------------
-
+  
   //------------------------------------------------------------------------------
   std::chrono::time_point currently = std::chrono::time_point_cast<std::chrono::microseconds>(
     std::chrono::system_clock::now()

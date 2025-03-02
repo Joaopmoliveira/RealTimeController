@@ -68,17 +68,17 @@ add_executable(WatchDog
 src/watchdog.cpp
 )
 
-add_executable(Sensors 
-src/simplified_sensors.cpp
-)
+#add_executable(Sensors 
+#src/simplified_sensors.cpp
+#)
 
 add_executable(Client 
 src/client.cpp
 )
 
-target_include_directories(Sensors PUBLIC 
-${Boost_INCLUDE_DIRS}
-)
+#target_include_directories(Sensors PUBLIC 
+#${Boost_INCLUDE_DIRS}
+#)
 
 target_include_directories(Client PUBLIC 
 ${Boost_INCLUDE_DIRS}
@@ -89,12 +89,12 @@ if(UNIX AND NOT APPLE)
     Threads::Threads
     asio)
 
-    target_link_libraries(Sensors PUBLIC 
-    Threads::Threads
-    asio
-    rt
-    atomic
-    )
+    #target_link_libraries(Sensors PUBLIC 
+    #Threads::Threads
+    #asio
+    #rt
+    #atomic
+    #)
 
     target_link_libraries(Client PUBLIC 
     Threads::Threads
@@ -103,9 +103,9 @@ if(UNIX AND NOT APPLE)
     atomic
     )
 else()
-    target_link_libraries(Sensors PUBLIC 
-    asio
-    )
+    #target_link_libraries(Sensors PUBLIC 
+    #asio
+    #)
 
     target_link_libraries(Client PUBLIC 
     asio
@@ -119,5 +119,5 @@ endif()
 # thus we add a restriction so that the executables are only compiled 
 # once the header filed with the shared memory layout have been compiled 
 add_dependencies(Client CompilerByproducts)
-add_dependencies(Sensors CompilerByproducts)
+#add_dependencies(Sensors CompilerByproducts)
 add_dependencies(WatchDog CompilerByproducts)

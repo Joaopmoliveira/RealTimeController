@@ -54,6 +54,14 @@ int main(){
 
         std::chrono::time_point currently = std::chrono::time_point_cast<std::chrono::microseconds>(std::chrono::system_clock::now());
         message.client_receive_timestamp = currently.time_since_epoch().count();
+
+        if(message.gps_reading){
+            
+        }
+
+        if(message.grayscale_image_reading){
+
+        }
         
         copy_from_watchdog_message_to_memory(asio_memory_buffer.data(),message);
         asio::write(client_socket,asio::buffer(asio_memory_buffer),asio::transfer_exactly(asio_memory_buffer.size()),ec);
