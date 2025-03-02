@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+      "nlohmann-json",
+      "asio",
+      "boost-interprocess"
+    ],
+    "builtin-baseline": "7e21420f775f72ae938bdeb5e6068f722088f06a"
+}

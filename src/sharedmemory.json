@@ -1,0 +1,32 @@
+{
+    "ticks_per_sample_time" : 10,
+    "tick_duration_microseconds" : 10000,
+    "sensors_tick_slice" : 0.3,
+    "shared_memory_name" : "MEMORY_REGION",
+    "messages" : [
+        {
+        "message" : "gps",
+        "multiple" : 1,
+        "fields" : [
+            {"name" : "counter", "type" : "int", "array" : 1},
+            {"name" : "latitude", "type" : "double" , "array" : 1},
+            {"name" : "longitude", "type" : "double" , "array" : 1},
+            {"name" : "height", "type" : "double" , "array" : 1},
+            {"name" : "velocity", "type" : "double" , "array" : 3},
+            {"name" : "acceleration", "type" : "double" , "array" : 3},
+            {"name" : "gforce", "type" : "double" , "array" : 1},
+            {"name" : "orientation", "type" : "double" , "array" : 3},
+            {"name" : "angular_velocity", "type" : "double" , "array" : 3},
+            {"name" : "standard_deviation", "type" : "double" , "array" : 3}
+        ]
+        },
+        {
+        "message" : "grayscale_image",
+        "multiple" : 30,
+        "fields" : [
+            {"name" : "counter", "type" : "int", "array" : 1},
+            {"name" : "data", "type" : "bytes", "array" : 5880000 }
+        ]  
+        }
+        ]
+}
